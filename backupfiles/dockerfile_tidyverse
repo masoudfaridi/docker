@@ -1,0 +1,164 @@
+FROM rocker/rstudio
+
+
+
+RUN apt-get -y update
+
+
+COPY scripts /rocker_scripts
+
+
+
+
+ENV CRAN=https://cran.um.ac.ir
+#https://cran.um.ac.ir/src/contrib/withr_3.0.0.tar.gz
+
+
+
+
+
+RUN /rocker_scripts/install_tidyverse.sh
+
+
+
+# RUN R -e "install.packages('shiny',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+# RUN R -e "install.packages('https://cran.um.ac.ir/src/contrib/Archive/ConvCalendar/ConvCalendar_1.2.tar.gz',repos=NULL, type='source')"
+
+
+
+# RUN R -e "install.packages('shiny',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN /rocker_scripts/install_tidyverse.sh
+
+
+# blind mount folder    
+# RUN mkdir -p /home/rstudio/dbm/
+
+
+# RUN rm -f /etc/apt/sources.list.d/archive_uri-*
+# RUN apt-get update
+
+
+
+
+
+
+
+# RUN R -e "options(timeout = max(1000, getOption('timeout')))"
+
+# # https://cran.r-project.org
+
+# RUN R -e "install.packages('https://cran.um.ac.ir/src/contrib/Archive/ConvCalendar/ConvCalendar_1.2.tar.gz',repos=NULL, type='source')"
+
+
+
+# RUN /sh_scripts_files/part_01.sh
+
+# RUN R -e "install.packages('shiny',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN apt-get --allow-releaseinfo-change update
+# RUN apt-get update 
+
+# RUN apt-get install lsb-release 
+# RUN apt-get install libcurl4-openssl-dev 
+
+
+
+
+
+
+# RUN apt-get install lsb-release 
+# RUN apt-get install libcurl4-openssl-dev 
+# RUN apt-get install libcairo2-dev
+# RUN apt-get install xtail
+
+
+
+
+# RUN R -e "install.packages('DT',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('shinydashboardPlus',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('future',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+
+# RUN R -e "install.packages('BH',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN R -e "install.packages('shinyfullscreen',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('shinymanager',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('shinyjs',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('summarytools',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('doParallel',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('markdown',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN R -e "install.packages('showtext',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+
+# RUN R -e "install.packages('shinythemes',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+
+# RUN R -e "install.packages('GGally',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('dbplot',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('benchmarkme',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('tidypredict',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN R -e "install.packages('openxlsx',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('corrr',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('rnaturalearth',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('collapse',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('ggcorrplot',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('scatterPlotMatrix',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('ggthemes',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('rworldmap',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN R -e "install.packages('rgeos',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('nptest',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+# RUN R -e "install.packages('terra',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('translations',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('zeallot',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('modeldb',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('raster',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('s2',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN R -e "install.packages('lme4',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('nycflights13',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+
+
+
+# RUN R -e "install.packages('factoextra',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('thematic',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+# RUN R -e "install.packages('plumber',dependencies=TRUE, repos='https://cran.um.ac.ir/')"
+
+# RUN apt-get install -y libfreetype6-dev libtiff5-dev
+
+
+# RUN apt-get update
+# RUN apt-get install -y vim
+
+
+
+# RUN apt-get install -y r-cran-devtools
+# RUN apt-get update -y
+
+# RUN R -e "devtools::install_github('rstudio/gridlayout')"
+# RUN R -e "devtools::install_github('ropensci/rnaturalearthhires')"
+
+# RUN /rocker_scripts/install_python.sh
+
+#################### RUN APP
+# set repos='https://cran.um.ac.ir/' for all above commands
+# WORKDIR /app
+# COPY . .
+# COPY . /app
+# EXPOSE 3838
+# CMD ["R", "-e", "shiny::runApp('/home/app')"]
+# CMD ["/app/app1/runApp.R"]
+# CMD ["python", "./app.py"]
+
+# CMD ["R", "-e", "shiny::runApp('/app/app',port = 3838, host='0.0.0.0')"]

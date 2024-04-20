@@ -1,0 +1,54 @@
+docker run --rm -ti -p 8787:8787 -e user=masoud -e password=masoud -e USERID=1001 -e GROUPID=1001 masoudfaridi/pythonrstudio
+docker run --rm -ti -p 8787:8787 -e PASSWORD=rstudio masoud1faridi/rstudioshinyr-4-3-1:003
+docker run --rm -ti -p 8787:8787 -p 3838:3838 -e PASSWORD=rstudio masoud1faridi/rstudioshinyr-4-3-1:011
+docker rmi masoudfaridi/pythonrstudio
+
+docker images
+docker run --rm -it -P masoudfaridi/pythonrstudio
+docker run -e password=rstudio -e user=rstudio --rm -it -P masoudfaridi/pythonrstudio
+docker rm e7388130ac2b
+
+docker images prune
+docker container prune
+
+docker stop e7388130ac2b
+
+docker port static-site
+
+docker run --rm -it busybox sh
+
+
+docker run -p 8888:80 prakhar1989/static-site
+
+
+
+#######  built 
+
+
+docker ps -a
+
+docker build -t masoudfaridi/rstudio-4-3-3:001 .
+docker build -t masoudfaridi/rstudio-tidyverse-4-3-3:002 .
+docker build -t masoudfaridi/rstudio-4-3-3:002 .
+docker build -t masoudfaridi/rstudio-4-3-3:003 .
+docker build -t masoudfaridi/rstudio-4-3-3:004 .
+docker build -t masoudfaridi/rstudio-4-3-3:005 .
+docker build -t masoudfaridi/rstudio-4-3-3:006 .
+docker build -t masoudfaridi/rstudio-4-3-3:007 .
+
+########  run
+
+
+docker run --rm -ti -p 8787:8787 -e PASSWORD=rstudio -e USERID=1001 -e GROUPID=1001 masoudfaridi/rstudio-4-3-3:001
+docker run --rm -ti -p 8787:8787 -e PASSWORD=rstudio -e USERID=1001 -e GROUPID=1001 masoudfaridi/rstudio-4-3-3:005
+
+docker run --rm -ti -p 8787:8787 -e PASSWORD=rstudio -e USERID=1001 -e GROUPID=1001 masoudfaridi/rstudio-4-3-3:009
+
+
+
+
+
+##############
+
+service  --status-all
+passwd
