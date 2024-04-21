@@ -73,7 +73,7 @@ RUN /rocker_scripts/install_R_packages_masoud_part_06.sh
 # RUN R -e "devtools::install_github('rstudio/gridlayout')"
 # RUN R -e "remotes::install_github('rstudio/shinyuieditor')"
 # RUN R -e "remotes::install_github('andrewzm/STRbook')"
-
+# RUN R -e "install.packages('furrr')"
 
 
 

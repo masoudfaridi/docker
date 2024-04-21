@@ -52,3 +52,6 @@ docker run --rm -ti -p 8787:8787 -e PASSWORD=rstudio -e USERID=1001 -e GROUPID=1
 
 service  --status-all
 passwd
+
+
+docker save -o f:\file.tar masoudfaridi/rstudio-4-3-3:012

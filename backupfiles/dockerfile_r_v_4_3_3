@@ -1,10 +1,31 @@
-FROM rocker/rstudio
+FROM ubuntu
+LABEL org.opencontainers.image.licenses="GPL-2.0-or-later" \
+      org.opencontainers.image.source="https://github.com/rocker-org/rocker-versioned2" \
+      org.opencontainers.image.vendor="Rocker Project" \
+      org.opencontainers.image.authors="Carl Boettiger <cboettig@ropensci.org>"
+
+ENV R_VERSION=4.3.3
+ENV R_HOME=/usr/local/lib/R
+ENV TZ=Etc/UTC
+
+COPY scripts/install_R_source.sh /rocker_scripts/install_R_source.sh
+
+RUN /rocker_scripts/install_R_source.sh
+
+ENV CRAN=https://cran.um.ac.ir
+ENV LANG=en_US.UTF-8
+
+COPY scripts /rocker_scripts
+
+RUN /rocker_scripts/setup_R.sh
+
+CMD ["R"]
 
 
 ############### part 01 masoudfaridi/rstudio-4-3-3:001
 RUN apt-get -y update
 COPY scripts /rocker_scripts
-ENV CRAN=https://cran.um.ac.ir
+# ENV CRAN=https://cran.um.ac.ir
 RUN /rocker_scripts/install_tidyverse.sh
 
 ############### part 02 masoudfaridi/rstudio-4-3-3:002
@@ -66,14 +87,14 @@ RUN /rocker_scripts/install_R_packages_masoud_part_05.sh
 RUN /rocker_scripts/install_R_packages_masoud_part_06.sh
 
 
-############## part 05 masoudfaridi/rstudio-4-3-3:011
+############### part 05 masoudfaridi/rstudio-4-3-3:011
 # Not in CRAN
-RUN R -e "remotes::install_github('rstudio/shinyuieditor')"
-RUN R -e "devtools::install_github('zac-garland/zgtools')"
-RUN R -e "devtools::install_github('rstudio/gridlayout')"
-RUN R -e "remotes::install_github('rstudio/shinyuieditor')"
-RUN R -e "remotes::install_github('andrewzm/STRbook')"
-RUN R -e "install.packages('furrr')"
+# RUN R -e "remotes::install_github('rstudio/shinyuieditor')"
+# RUN R -e "devtools::install_github('zac-garland/zgtools')"
+# RUN R -e "devtools::install_github('rstudio/gridlayout')"
+# RUN R -e "remotes::install_github('rstudio/shinyuieditor')"
+# RUN R -e "remotes::install_github('andrewzm/STRbook')"
+
 
 
 
